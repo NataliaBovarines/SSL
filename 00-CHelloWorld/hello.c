@@ -1,9 +1,16 @@
+/*
+TP N° 00 "Hello, World!"" en C
+Programa cuya salida "Hello World" es capturada en un archivo
+Alumna: Bovarines Natalia Gabriela
+Ultima modificacion: 10/04/2022
+*/
+
 #include<stdio.h>
 
 int main(void){
 
-    FILE* output_file = fopen("output.txt", "w+");
-    fprintf(output_file,"Hello, world!");
+    FILE* output_file = freopen("output.txt", "w+",stdout);
+    printf("Hello, world!");
     fclose(output_file); 
 
 }
