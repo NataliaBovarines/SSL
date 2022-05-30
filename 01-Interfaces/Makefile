@@ -3,12 +3,10 @@
 # 28/05/2022
 
 all: TablasDeConversion ConversionTest
-CFLAGS = -std=c18 -Wall -pedantic-errors -m32 -D __DEBUG__ -g3 
-INCS = -I"C:\MinGW\include"
-LIB = -L"C:\MinGW\lib"
+CFLAGS = -std=c18 -Wall 
 
 TablasDeConversion:  TablasDeConversion.o Conversion.o 
-	gcc TablasDeConversion.o Conversion.o -o TablasDeConversion  $(CFLAGS) $(INCS) $(LIB)
+	gcc TablasDeConversion.o Conversion.o -o TablasDeConversion  $(CFLAGS)
 	./TablasDeConversion
 
 ConversionTest: ConversionTest.o Conversion.o
