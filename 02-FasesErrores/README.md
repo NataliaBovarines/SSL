@@ -16,12 +16,12 @@
         Conclusiones:
 
         - Reemplaza la linea 1 por el contenido de la biblioteca stdio.h (declaracion de las funciones standard). 
-        - Remueve el comentario de la linea dos y lo reemplaza por un espacio
-    d) En la primer linea se declara una funcion printf que retorna un int y que espera como minimo un solo argumento. El primer argumento es un puntero a un caracter que no se va a poder modificar y que solo es apuntado por s
+        - Remueve el comentario de la linea dos y lo reemplaza por un espacio.
+    d) En la primer linea se declara una funcion printf que retorna un int y que espera como minimo un solo argumento. El primer argumento es un puntero a un caracter que no se va a poder modificar y que solo es apuntado por s.
 
     e) $ gcc -E hello3.c -o hello3.i
-     Diferencias entre hello3.c y hello3.1 :
-        en hello3.i se muestran errores y en que archivo fueron detectados
+     Diferencias entre hello3.c y hello3.i :
+        en hello3.i se muestran errores y en que archivo fueron detectados.
 
 ### 2) Compilacion
     a) $ gcc -S hello3.c -o hello3.s
@@ -43,8 +43,8 @@
       | ^~~~~~
       | printf
    
-   Conclusiones:
-   se genera hello4.s sin problemas lo cual significa que el programa es correcto a nivel lexico, sintactico y semantico
+    Conclusiones:
+     se genera hello4.s sin problemas lo cual significa que el programa es correcto a nivel lexico, sintactico y semantico.
 
     c) De la linea 5 a la linea 10 se definen metacomandos que facilitan la codificacion posterior.
     Se tiene una pila donde se realiza movimientos donde el stack pointer pasa a ser el base pointer para dar lugar a las proximas invocaciones y variables.
@@ -107,7 +107,7 @@
         0001460 2e 65 68 5f 66 72 61 6d 65 00
         0001472
 
-        Son los bytes del archivo objeto representados en hexadecimal
+        Son los bytes del archivo objeto representados en hexadecimal.
 
 ### 3) Vinculacion 
     a) $ gcc hello4.o -o hello4.exe
@@ -138,6 +138,7 @@
     +++ |+#include <stdio.h>
     1 | int main(void){
 
+    b) Con la remocion del prototipo el programa funciona dependiendo del compilador. En el caso de CLANG este compilador devuelve un error y no ejecuta el programa, en cambio GCC es más flexible genera warnings pero permite compilar.
 ### 6) Compilacion separada
 
     b) 
@@ -165,15 +166,28 @@
     +++ |+#include <stdio.h>
     1 | void prontf(const char* s, int i){
     
+    c) Tiene un comportamiento indefinido porque prontf no está definido, no se especifica la cantidad y tipo de parametros.
+    
     d)
-    iv) $ gcc hello9.c studio2.c -o hello9.exe
-    (Sin errores ni warnings)
-    $ ./hello9
-    La respuesta es 42
+    iv) Permite detectar errores y verificar que el cliente esté usando el contrato correctamente y que el proveedor esté implementando y entregando el producto correcto.
 
 
 ### CREDITO EXTRA
 Bibliotecas
 - ¿Qué son?
 
-    Son conjuntos de funciones que proveen los lenguajes de programacion, a traves de las cuales se resuelven tareas estándar que generalmente son requeridas en la mayoría de los programas. Por ejemplo, las funciones printf y scanf que permiten mostrar y leer datos por consola y forman parte de la biblioteca estandar de entrada/salida de C, tambien conocida como stdio.h
+    Son conjuntos de funciones que proveen los lenguajes de programacion, a traves de las cuales se resuelven tareas estándar que generalmente son requeridas en la mayoría de los programas. Por ejemplo, las funciones printf y scanf que permiten mostrar y leer datos por consola y forman parte de la biblioteca estandar de entrada/salida de C, tambien conocida como stdio.h .
+ 
+ - ¿Se pueden distribuir?
+   
+   Los archivos objetos y los contratos se pueden distribuir.
+   
+ - ¿Son portables?
+    
+    No, porque los archivos objetos de una arquitectura RISC no sirven para una arquitectura CISC. Los archivos objetos deberian ser recompilados ya que los archivos con codigo fuente son portables.
+    
+ - ¿Cuales son sus ventajas y desventajas?
+    
+    Se pueden reutilizar pero generan dependencia.
+    
+ 
